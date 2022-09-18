@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsModule } from '@ngxs/store';
@@ -14,10 +15,18 @@ import { LoginComponent } from './modules/login/pages/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserModule
+    /*
+    // NGXS incompatible with current version of Ivy
     NgxsModule.forRoot([], {
-      developmentMode: !environment.production
+      developmentMode: !environment.productio
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: 'auth.token'
     })
-  ],
+  */
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })
